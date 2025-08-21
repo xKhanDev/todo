@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <h1 class="heading1">I'm Heading</h1>
+    <p class="para1" id="para1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, fuga.
+    </p>
+    <p class="para1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, fuga.
+    </p>
+    <p class="para2">I'm Paragraph No 2.</p>
+    <ul>
+      <li>Apple</li>
+      <li>Mango</li>
+      <li>Banana</li>
+      <li>Guave</li>
+    </ul>
+
+    <script>
+      // DOM
+      let p = document.querySelectorAll(".para1");
+      console.log(p);
+
+      console.log((p[0].textContent = "Loading..."));
+
+      p.innerHTML = "<b>This is Comming from APi</b>";
+    </script>
+  </body>
+</html>

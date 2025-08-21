@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Last Class</title>
+  </head>
+  <body>
+    <h1 id="username">hello</h1>
+    <script>
+      const username = document.getElementById("username");
+      // get: https://jsonplaceholder.typicode.com/users/1
+      // get: https://jsonplaceholder.typicode.com/posts?userId=1
+      // post: https://jsonplaceholder.typicode.com/posts
+      // put: https://jsonplaceholder.typicode.com/posts/1
+      // delete: https://jsonplaceholder.typicode.com/posts/1
+
+      const getPost = async () => {
+        fetch("https://jsonplbaceholder.typicode.com/users/1")
+          .then((res) => res.json())
+          .then((data) => (username.textContent = data.email));
+      };
+
+      getPost();
+
+      localStorage.setItem("theme", "dark");
+      console.log(localStorage.getItem("theme"));
+
+      localStorage.removeItem("theme");
+    </script>
+  </body>
+</html>

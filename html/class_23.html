@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sync and async</title>
+  </head>
+  <body>
+    <script>
+      // Sync example
+      // console.log("Hello");
+      // let i = 1;
+      // while (i < 1000) {
+      //   console.log("hello from loop");
+      //   i++;
+      // }
+      // console.log("Hello Again");
+
+      //
+      // console.log("hello start");
+      // setTimeout(() => {
+      //   console.log("hello from settimeout");
+      // }, 2000);
+
+      let count = 0;
+      const xyz = setInterval(() => {
+        console.log(new Date());
+        count++;
+
+        if (count == 5) {
+          clearInterval(xyz);
+        }
+      }, 100);
+    </script>
+  </body>
+</html>

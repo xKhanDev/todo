@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/class_7.css" />
+    <title>Responsiveness</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Logo</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Services</a></li>
+      </ul>
+      <div class="nav-buttons">
+        <button>Contact</button>
+        <span><i class="fa-solid fa-bars"></i> </span>
+      </div>
+    </nav>
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <p>Hey Their I'm,</p>
+          <h2>Safeer Ullah Khan</h2>
+          <p>
+            This is a responsive design example. Resize the window to see how
+            the layout changes.
+          </p>
+          <div class="hero-buttons">
+            <button>Download CV</button>
+            <button>Contact Me</button>
+          </div>
+        </div>
+        <img src="../source/date.png" alt="" />
+      </section>
+      <section class="about">
+        <img src="../source/coding.jpg" alt="" />
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I am a web developer with a passion for creating responsive and
+            user-friendly websites. My goal is to build applications that are
+            accessible on any device.
+          </p>
+        </div>
+      </section>
+        <section class="projects">
+            <h2>My Projects</h2>
+            <div class="project-list">
+            <div class="project-item">
+                <img src="../source/coding.jpg" alt="Project 1" />
+                <h3>Project 1</h3>
+                <p>Description of project 1.</p>
+            </div>
+            <div class="project-item">
+                <img src="../source/coding.jpg" alt="Project 2" />
+                <h3>Project 2</h3>
+                <p>Description of project 2.</p>
+            </div>
+            <div class="project-item">
+                <img src="../source/coding.jpg" alt="Project 3" />
+                <h3>Project 3</h3>
+                <p>Description of project 3.</p>
+            </div>
+            </div>
+    </main>
+    <script>
+      const navButtons = document.querySelector(".nav-buttons span");
+      const navList = document.querySelector("nav ul");
+
+      navButtons.addEventListener("click", () => {
+        navList.classList.toggle("active");
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          navList.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

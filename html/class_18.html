@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <input type="text" id="input" placeholder="Write something here..." />
+    <hr />
+    <h3>Text will appear here</h3>
+    <h1 id="output"></h1>
+    <br /><br />
+
+    <h1 id="before">Before Click</h1>
+    <button id="click">Click</button>
+
+    <br /><br />
+    <select name="course" id="course">
+      <option value="">Select a course</option>
+      <option value="Web development">Web development</option>
+      <option value="ai">AI</option>
+      <option value="graphic">Graphic Designing</option>
+    </select>
+    <h3>Output here</h3>
+    <p class="courseOutput"></p>
+
+    <script>
+      const text = document.getElementById("before");
+      const button = document.getElementById("click");
+      const input = document.getElementById("input");
+      const output = document.getElementById("output");
+      const course = document.getElementById("course");
+      const courseOutput = document.querySelector(".courseOutput");
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "w" || e.key === "z") {
+          output.textContent = e.key;
+        }
+      });
+    </script>
+  </body>
+</html>

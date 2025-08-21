@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <script>
+        const users = ["safeer","aakif","nasir"];
+        const users2 = ["Sufyan","farhan","jamshid"];
+
+        const newArray = users2.concat(users)
+        // console.log(newArray)
+
+        function add(n1,n2,...n3){
+            let sum = n1 + n2;
+        
+            return n3.reduce((acc,result)=>acc + result,sum)
+        }
+
+        const prices = [100,300,700];
+        add(...prices)
+        
+    </script>
+</body>
+</html>

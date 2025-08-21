@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array and Its Methods</title>
+  </head>
+  <body>
+    <h1>Array and Its Methods</h1>
+    <script>
+      const users = ["safeer", "aakif", "tawab", "aamir", "nasir", "zahir"];
+      const ages = [12, 43, 23, 54, 76, 45, 32, 11, 18];
+      const prices = [100, 250, 1300, 400, 15000, 600];
+
+      document.write("Users: [", users, "]<br> <br>");
+      document.write("Ages: [", ages, "]<br> <br>");
+      document.write("Prices: [", prices, "]<br> <br>");
+      const check = prices.some((price) => price > 500000);
+      document.write(check);
+    </script>
+  </body>
+</html>

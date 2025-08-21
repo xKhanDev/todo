@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Todo Project</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .todo {
+        width: 400px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .todo h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .todo-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .todo-input input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .todo-input button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .todo-item {
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .todo-actions {
+        display: flex;
+        gap: 4px;
+      }
+      .todo-actions button {
+        padding: 4px;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .delete {
+        background-color: #f44336;
+      }
+      .complete {
+        background-color: #4caf50;
+      }
+      .edit {
+        background-color: #2196f3;
+      }
+      ul li {
+        list-style: none;
+      }
+      .done {
+        text-decoration: line-through;
+        color: red;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo">
+        <h1>Todo List</h1>
+        <div class="todo-input">
+          <input type="text" id="todo-input" placeholder="Add a todo" />
+          <button id="add-btn">Add</button>
+        </div>
+        <ul id="todo-list"></ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    const todoInput = document.getElementById("todo-input");
+    const addBtn = document.getElementById("add-btn");
+    const todoList = document.getElementById("todo-list");
+
+    addBtn.addEventListener("click", function () {
+      const todo = todoInput.value;
+
+      if (todo === "") {
+        alert("todo is empty");
+      }
+
+      const li = document.createElement("li");
+      li.innerHTML = `<li class="todo-item">
+            <p>${todo}</p>
+            <div class="todo-actions">
+              <button class="complete">
+                <i class="fa-solid fa-check"></i>
+              </button>
+              <button class="edit">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="delete"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+          </li>`;
+
+      todoList.append(li);
+
+      todoInput.value = "";
+
+      const complete = li.querySelector(".complete");
+
+      // Complete Button Event Start from here
+      complete.addEventListener("click", function () {
+        const text = li.querySelector("p");
+        text.classList.toggle("done");
+      });
+
+      // Delete Button
+      const deleteBtn = li.querySelector(".delete");
+      deleteBtn.addEventListener("click", function () {
+        li.remove();
+      });
+
+      // Edit Button
+      const editBtn = li.querySelector(".edit");
+      editBtn.addEventListener("click", function () {
+        let text = li.querySelector("p").textContent;
+
+        todoInput.value = text;
+
+        li.remove();
+      });
+    });
+  </script>
+</html>

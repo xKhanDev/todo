@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .theme {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Hello their is nothing</h1>
+    </div>
+    <button onclick="toggleTheme()">click me</button>
+
+    <script>
+      function toggleTheme() {
+        document.body.classList.add("theme");
+
+        console.log(document.body.classList.contains("theme"));
+      }
+    </script>
+  </body>
+</html>

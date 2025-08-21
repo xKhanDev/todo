@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Menu</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #2d89ef;
+        color: #fff;
+        padding: 10px 20px;
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .nav-links li a:hover {
+        color: #fff;
+        background-color: #000;
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        border: 3px dashed red;
+      }
+
+      /* Mobile View */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          background: #2d89ef;
+          position: absolute;
+          top: 60px;
+          right: 20px;
+          width: 150px;
+          border-radius: 5px;
+          text-align: right;
+          padding: 10px;
+        }
+
+        .nav-links.show {
+          display: flex;
+        }
+
+        .hamburger {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Student Portal</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Assignments</a></li>
+        <li><a href="#">Results</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">☰</div>
+    </nav>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+
+      const add = () => {};
+    </script>
+  </body>
+</html>
