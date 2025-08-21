@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    padding: 20px 40px;
+    /* background: #000;
+    color: aliceblue; */
+}
+
+.o-list{
+    list-style: circle;
+}
+
+.o-list li{}
+
+.u-list{
+    list-style: decimal;
+}
+.u-list li{}
+
+.user-table{
+    border-collapse: collapse;
+}
+
+/* For Padding */
+.user-table th,td{
+    padding: 10px;
+    text-align: center;
+}
+
+.btn-container{
+    display: block;
+    margin: 20px 0;
+}
+
+.btn-container button{
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btn-click:active{
+    color: yellow;
+}
+
+.btn-hover:hover{
+    background-color: black;
+    padding: 0;
+}
+
+/* first-child, last-child,nth-child */
+ul li{
+    list-style: none;
+}
+ul li::after{
+    content: "";
+
+}
+
+/* visited : anchor tag */
+a:visited{
+    color: yellow;
+}
+
+.btn-container{
+    margin-top: 100px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+
+/* Pseudo Elements */
+.para1::first-line{
+    font-size: 32px;
+    font-weight: 700;
+}

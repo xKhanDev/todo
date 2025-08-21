@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <style>
+      .dark-theme {
+        background-color: #222;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+    <button onclick="setTheme('dark')">Dark Mode</button>
+    <button onclick="setTheme('light')">Light Mode</button>
+
+    <script>
+      // Function to set the theme
+      function setTheme(themeName) {
+        localStorage.setItem("theme", themeName);
+        document.body.className = themeName + "-theme"; // This is just an example class name
+      }
+
+      // Function to apply the saved theme on page load
+      function applySavedTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          // Check if a theme was saved
+          document.body.className = savedTheme + "-theme";
+        }
+      }
+
+      // Apply the theme when the page loads
+      applySavedTheme();
+    </script>
+  </body>
+</html>

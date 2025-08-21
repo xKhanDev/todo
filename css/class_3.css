@@ -1,0 +1,36 @@
+.container{
+    position: relative;
+    background-color: yellow;
+}
+.list{
+   /* background: radial-gradient(red,blue); */
+   position: relative;
+   top: 0px;
+
+}
+.list li{
+display: inline-block;
+/* border: 1px solid red;
+padding: 10px;
+height: 100px; */
+}
+.paragraph{
+    height: 50vh;
+    overflow: scroll;
+}
+.btn{
+    background-color: black;
+    color: aliceblue;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: sticky;
+    right: 0px;
+    top: 300px;
+    z-index: -1;
+}
+
+.para{
+    border: 1px solid red;
+    height: 50px;
+    overflow: hidden;
+}
